@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:form>
+	<fieldset>
+			<legend>Inscription</legend>
+
+			<h:outputLabel for="firstname">Nom d'utilisateur <span	class="requis">*</span>	</h:outputLabel>
+			<h:inputText id="firstname" value="#{userMBean.user.firstname}"	required="true" size="20" maxlength="20" />
+			<h:message id="firstnameMessage" for="firstname" errorClass="erreur" />
+			<br />
+
+			<h:outputLabel for="lastname">Adresse <span class="requis">*</span></h:outputLabel>
+			<h:inputText id="lastname" value="#{userMBean.user.lastname}"	required="true" size="20" maxlength="60" />
+			<h:message id="lastnameMessage" for="lastname" errorClass="erreur" />
+			<br />
+			
+			<h:outputLabel for="login">Login <span	class="requis">*</span>	</h:outputLabel>
+			<h:inputText id="login" value="#{userMBean.user.login}"	required="false" size="20" maxlength="20" />
+			<h:message id="loginMessage" for="login" errorClass="erreur" />
+			<br />
+
+			
+			<h:outputLabel for="email">Email <span	class="requis">*</span>	</h:outputLabel>
+			<h:inputText id="email" value="#{userMBean.user.email}"	required="false" size="20" maxlength="20" />
+			<h:message id="emailMessage" for="email" errorClass="erreur" />
+			<br />
+			
+			<h:outputLabel for="street">Rue <span	class="requis">*</span>	</h:outputLabel>
+			<h:inputText id="street" value="#{userMBean.userAddress.street}" required="false" size="20" maxlength="20" />
+			<h:message id="streetMessage" for="street" errorClass="erreur" />
+			<br />
+
+			<h:outputLabel for="address">Address <span	class="requis">*</span></h:outputLabel>
+			<h:inputText id="address" value="#{userMBean.userAddress.address}" required="false" size="20" maxlength="20" />
+			<h:message id="addressMessage" for="address" errorClass="erreur" />
+			<br />
+
+			<h:outputLabel for="city">Ville <span class="requis">*</span></h:outputLabel>
+			<h:inputText id="city" value="#{userMBean.userAddress.city}" required="false" size="20" maxlength="20" />
+			<h:message id="cityMessage" for="city" errorClass="erreur" />
+			<br />
+	
+			<h:outputLabel for="zipcode">Code postal <span	class="requis">*</span>	</h:outputLabel>
+			<h:inputText id="zipcode" value="#{userMBean.userAddress.zipcode}" required="false" size="20" maxlength="60" />
+			<h:message id="zipcodeMessage" for="zipcode" errorClass="erreur" />
+			<br />
+			
+			<h:outputLabel for="contry">Pays <span	class="requis">*</span></h:outputLabel>
+			<h:inputText id="contry" value="#{userMBean.userAddress.contry}" required="false" size="20" maxlength="60" />
+			<h:message id="contryMessage" for="contry" errorClass="erreur" />
+			<br />
+	
+			<h:messages globalOnly="true" infoClass="info" />
+	
+			<h:commandButton value="Inscription" action="#{userMBean.addUser}" styleClass="sansLabel" />
+			<br />
+	</fieldset>
+</h:form>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:outputStylesheet name="css/styles.css" />
+
+	<ui:define name="content">
+		<h:form id="form">
+
+			<h:dataTable id="dt1" value="#{prospectionMBean.prospectionList}" var="item" bgcolor="#F1F1F1" border="10" cellspacing="2" width="60%" rules="all">
+
+				<f:facet name="header">
+					<h:outputText value="Prospections List Data Table" />
+				</f:facet>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="ProspectionId" />
+					</f:facet>
+					<h:outputText value="#{item.ProspectionId}"></h:outputText>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="FirstName" />
+					</f:facet>
+					<h:outputText value="#{item.firstname}"></h:outputText>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="lastName" />
+					</f:facet>
+					<h:outputText value="#{item.lastname}"></h:outputText>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="login" />
+					</f:facet>
+					<h:outputText value="#{item.login}"></h:outputText>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Email" />
+					</f:facet>
+					<h:outputText value="#{item.email}"></h:outputText>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Address" />
+					</f:facet>
+					<h:outputText value="#{item.address}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Action" />
+					</f:facet>
+					<h:commandLink value="Delete" action="#{prospectionMBean.removeProspection(item)}" />
+				</h:column>
+
+			</h:dataTable>
+
+		</h:form>
+	</ui:define>
+	
+</html>

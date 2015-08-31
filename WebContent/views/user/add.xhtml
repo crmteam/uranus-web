@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Ajout d'un contact</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:panel header="head" style="width:400px;">
+			<p:panelGrid columns="2">
+				<h:outputLabel for="firstname" value="Firstname: " />
+				<p:inputText id="firstname" value="#{userMBean.user.firstname}" />
+				<br />
+				<h:outputLabel for="lastname" value="Lastname: " />
+				<p:inputText id="lastname" value="#{userMBean.user.lastname}" />
+				<br />
+				<h:outputLabel for="login" value="Login " />
+				<p:inputText id="login" value="#{userMBean.user.login}" />
+				<br />
+				<h:outputLabel for="email" value="Email: " />
+				<p:inputText id="email" value="#{userMBean.user.email}" />
+				<br />
+				<h:outputLabel for="password" value="Password " />
+				<p:inputText id="password" value="#{userMBean.user.password}" />
+				<br />
+				<h:outputLabel for="phone" value="Phone: " />
+				<p:inputText id="phone" value="#{userMBean.user.phone}" />
+				<br />
+				<h:outputLabel for="surname" value="Surname: " />
+				<p:inputText id="surname" value="#{userMBean.user.surname}" />
+				<br />
+				<f:facet name="footer">
+					<h:commandButton value="Add Customer" action="#{userMBean.addUser}" />
+				</f:facet>
+			</p:panelGrid>
+
+		</p:panel>
+
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:form>
+		<fieldset>
+			<legend>Nouvelle Fiche client</legend>
+			<div>
+			
+			<p:panel header="firstname" style="width:400px;">
+				<p:panelGrid columns="2">
+					<h:outputLabel for="firstname" value="Firstname: "/>
+					<p:inputText value="#{prospectionMBean.customer.firstname}"/>
+					<br />
+					<h:outputLabel for="lastname" value="Lastname: " />
+                    <p:inputText  value="#{prospectionMBean.customer.lastname}"/>
+                    <br />
+                    <h:outputLabel for="company" value="Campany Name: " />
+                    <p:inputText value="#{prospectionMBean.company.companyName}"/>
+                    
+                    <br />
+                    <f:facet name="footer">
+                        <h:commandButton value="Add Customer" action="#{prospectionMBean.addProspection}"/>
+                    </f:facet>
+				</p:panelGrid>
+			
+			</p:panel>
+		
+			
+			
+				<h:outputLabel for="firstname">Nom du client <span	class="requis">*</span>	</h:outputLabel>
+				<h:inputText id="firstname" value="#{prospectionMBean.customer.firstname}"	required="true" size="20" maxlength="20" />
+				<h:message id="firstnameMessage" for="firstname" errorClass="erreur" />
+				<br />
+	
+				
+				
+				<h:outputLabel for="lastname">Prénom du client <span class="requis">*</span> </h:outputLabel>
+				<h:inputText id="lastname" value="#{prospectionMBean.customer.lastname}"	required="true" size="20" maxlength="20" />
+				<h:message id="lastnameMessage" for="lastname" errorClass="erreur" />
+				<br />
+	
+	
+				<h:outputLabel for="companyName">Company name <span class="requis">*</span> </h:outputLabel>
+				<h:inputText id="companyName" value="#{prospectionMBean.company.companyName}"	required="true" size="20" maxlength="20" />
+				<h:message id="companyNameMessage" for="companyName" errorClass="erreur" />
+				<br />
+			</div>
+			<div>
+				<h:outputLabel for="description">Company description <span class="requis">*</span> </h:outputLabel>
+				<h:inputTextarea id="description" value="#{prospectionMBean.company.description}"	required="true"  />
+				<h:message id="descriptionNameMessage" for="description" errorClass="erreur" />
+				<br />
+			
+				<h:outputLabel for="sector">Company sector <span class="requis"></span> </h:outputLabel>
+				<h:inputText id="sector" value="#{prospectionMBean.company.sector}"	required="false" size="20" maxlength="20" />
+				<h:message id="sectorNameMessage" for="sector" errorClass="erreur" />
+				<br />
+				
+				
+				<h:outputLabel for="phone">Phone <span class="requis"></span></h:outputLabel>
+				<h:inputText id="phone" value="#{prospectionMBean.company.phone}"	required="false" size="20" maxlength="20" />
+				<h:message id="phoneMessage" for="phone" errorClass="erreur" />
+				<br />
+		
+	
+				<h:outputLabel for="email">Adresse email <span	class="requis"></span>	</h:outputLabel>
+				<h:inputText id="email" value="#{prospectionMBean.customer.email}"	required="false" size="20" maxlength="20" />
+				<h:message id="emailMessage" for="email" errorClass="erreur" />
+				<br />
+	
+	
+				<h:outputLabel for="website">Website<span	class="requis"></span>	</h:outputLabel>
+				<h:inputText id="website" value="#{prospectionMBean.company.website}"	required="false" size="20" maxlength="20" />
+				<h:message id="websiteMessage" for="website" errorClass="erreur" />
+			    <br/>
+			  </div>  
+			  <div>
+				
+				<h:outputLabel for="street">N°<span	class="requis"></span>	</h:outputLabel>
+				<h:inputText id="street" value="#{prospectionMBean.address.street}"	required="false" size="20" maxlength="20" />
+				<h:message id="streetMessage" for="street" errorClass="erreur" />
+				<br />
+				
+				<h:outputLabel for="address">Address <span class="requis"></span></h:outputLabel>
+				<h:inputText id="address" value="#{prospectionMBean.address.address}"	required="false" size="20" maxlength="20" />
+				<h:message id="addressNameMessage" for="address" errorClass="erreur" />
+				<br />
+				
+				
+				
+				
+				<h:outputLabel for="city">City<span	class="requis"></span>	</h:outputLabel>
+				<h:inputText id="city" value="#{prospectionMBean.address.city}"	required="false" size="20" maxlength="20" />
+				<h:message id="cityMessage" for="city" errorClass="erreur" />
+				<br />
+				
+				
+				<h:outputLabel for="departement">Departement<span	class="requis"></span>	</h:outputLabel>
+				<h:inputText id="departement" value="#{prospectionMBean.address.departement}"	required="false" size="20" maxlength="20" />
+				<h:message id="departemnentMessage" for="departement" errorClass="erreur" />
+				<br />
+				
+				<h:outputLabel for="country">Country<span	class="requis"></span>	</h:outputLabel>
+				<h:inputText id="country" value="#{prospectionMBean.address.contry}"	required="false" size="20" maxlength="20" />
+				<h:message id="countryMessage" for="country" errorClass="erreur" />
+				<br />
+			</div>
+			<h:messages globalOnly="true" infoClass="info" />
+
+			<h:commandButton value="Ajouter" action="#{prospectionMBean.addProspection}"
+				styleClass="sansLabel" />
+			<br />
+		</fieldset>
+	</h:form>
+</html>
